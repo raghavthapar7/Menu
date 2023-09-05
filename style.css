@@ -71,3 +71,7 @@ hr{
     background-color: #c59d5f;
     color: #fff;
 }
+
+.recipe-container{
+    display: grid;
+}
