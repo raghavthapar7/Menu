@@ -1,6 +1,6 @@
 "use strict";
 
-const menu = [
+const recipes = [
   {
     id: 1,
     title: "buttermilk pancakes",
@@ -22,7 +22,7 @@ const menu = [
     title: "godzilla milkshake",
     category: "shakes",
     price: 6.99,
-    img: "https://images.unsplash.com/photo-1619158403521-ed9795026d47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+    img: "https://images.pexels.com/photos/1476332/pexels-photo-1476332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
   },
   {
@@ -46,7 +46,7 @@ const menu = [
     title: "oreo dream",
     category: "shakes",
     price: 18.99,
-    img: "https://images.unsplash.com/photo-1619158401201-8fa932695178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+    img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
   },
   {
@@ -54,7 +54,7 @@ const menu = [
     title: "bacon overflow",
     category: "breakfast",
     price: 8.99,
-    img: "https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+    img: "https://images.pexels.com/photos/2961957/pexels-photo-2961957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
@@ -62,7 +62,7 @@ const menu = [
     title: "american classic",
     category: "lunch",
     price: 12.99,
-    img: "https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80",
+    img: "https://images.pexels.com/photos/7159295/pexels-photo-7159295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
   },
   {
@@ -70,7 +70,7 @@ const menu = [
     title: "quarantine buddy",
     category: "shakes",
     price: 16.99,
-    img: "https://images.unsplash.com/photo-1587070270331-6095e6da73fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+    img: "https://images.pexels.com/photos/2347383/pexels-photo-2347383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
@@ -91,3 +91,31 @@ const containerApp = document.querySelector(".app");
 const containerRecipe = document.querySelector(".recipe-container");
 // ===============================================================
 // ===============================================================
+
+window.addEventListener("DOMContentLoaded", function (e) {
+  // Clearing the container for the
+  containerRecipe.innerHTML = "";
+
+  // HTML content to be added dynamically
+  recipes.forEach((recipe) => {
+    const html = `<article class="recipe">
+                  <img
+                    src=${recipe.img}
+                    alt="Recipe Image"
+                    class="recipe--img"
+                  />
+
+                  <div class="recipe-details">
+                    <div class="info">
+                      <h3 class="recipe--name">${recipe.title}</h3>
+                      <p class="recipe--cost">$${recipe.price}</p>
+                    </div>
+                    <p class="recipe--description">
+                      ${recipe.desc}
+                    </p>
+                  </div>
+                </article>`;
+
+    containerRecipe.insertAdjacentHTML("beforeend", html);
+  });
+});
