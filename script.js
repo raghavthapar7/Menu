@@ -92,8 +92,11 @@ const containerRecipe = document.querySelector(".recipe-container");
 // ===============================================================
 // ===============================================================
 
-window.addEventListener("DOMContentLoaded", function (e) {
-  // Clearing the container for the
+// Clearing the container for the data to be displayed
+containerRecipe.innerHTML = "";
+
+const displayRecipes = function (recipes) {
+  // Clearing the container so as to not pile up the content
   containerRecipe.innerHTML = "";
 
   // HTML content to be added dynamically
@@ -118,4 +121,18 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
     containerRecipe.insertAdjacentHTML("beforeend", html);
   });
+};
+
+// Adds the content as the page loads up
+window.addEventListener("DOMContentLoaded", function (e) {
+  displayRecipes(recipes);
+});
+
+btnBreakfast.addEventListener("click", function () {
+  // Filtering the recipes that are of the category breakfast
+  let breakfastRecipes = recipes.filter(
+    (recipe) => recipe.category === "breakfast"
+  );
+
+  displayRecipes(breakfastRecipes);
 });
