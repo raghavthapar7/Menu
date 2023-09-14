@@ -117,6 +117,10 @@ hr {
   font-size: 1.6rem;
 }
 
+.recipe--name {
+  text-transform: capitalize;
+}
+
 .recipe--cost,
 .recipe--name {
   margin-bottom: 0.8rem;
@@ -131,7 +135,7 @@ hr {
   justify-self: end;
   padding-top: 1.2rem;
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #617d98;
 }
 

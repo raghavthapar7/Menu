@@ -85,10 +85,11 @@ const btnAll = document.querySelector(".btn-all");
 const btnBreakfast = document.querySelector(".btn-breakfast");
 const btnLunch = document.querySelector(".btn-lunch");
 const btnShakes = document.querySelector(".btn-shakes");
-const btnDinner = document.querySelector(".btn-dinner");
 
+// HTML Containers
 const containerApp = document.querySelector(".app");
 const containerRecipe = document.querySelector(".recipe-container");
+
 // ===============================================================
 // ===============================================================
 
