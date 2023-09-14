@@ -128,6 +128,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
   displayRecipes(recipes);
 });
 
+btnAll.addEventListener("click", function () {
+  displayRecipes(recipes);
+});
+
 btnBreakfast.addEventListener("click", function () {
   // Filtering the recipes that are of the category breakfast
   let breakfastRecipes = recipes.filter(
@@ -135,4 +139,18 @@ btnBreakfast.addEventListener("click", function () {
   );
 
   displayRecipes(breakfastRecipes);
+});
+
+btnLunch.addEventListener("click", function () {
+  // Filtering the recipes that are of the category lunch
+  let lunchRecipes = recipes.filter((recipe) => recipe.category === "lunch");
+
+  displayRecipes(lunchRecipes);
+});
+
+btnShakes.addEventListener("click", function () {
+  // Filtering the recipes that are of the category shakes
+  let shakeRecipes = recipes.filter((recipe) => recipe.category === "shakes");
+
+  displayRecipes(shakeRecipes);
 });
